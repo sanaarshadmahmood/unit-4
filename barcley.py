@@ -60,8 +60,13 @@ plt.xlabel("return (%)")
 plt.ylabel("N")
 plt.show()
 
+plt.figure()
+plt.boxplot([bcs["ann_return"],bp["ann_return"],
+             tsco["ann_return"],vod["ann_return"]],
+             labels=["barclays","BP",
+                   "tesco","vodaphone"])
 
-
-
+cap = [33367, 68785, 20979, 2974]
+stocks = ["barclays","BP","Tesco","Vodaphone"]
 
 
