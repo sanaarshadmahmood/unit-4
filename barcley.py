@@ -5,9 +5,11 @@ Created on Mon Oct 23 12:40:01 2023
 @author: SANA
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+
+import numpy as np
+
 bcs = pd.read_csv('BCS_ann.csv')
 bp = pd.read_csv('BP_ann.csv')
 tsco = pd.read_csv('TSCO_ann.csv')
@@ -66,7 +68,12 @@ plt.boxplot([bcs["ann_return"],bp["ann_return"],
              labels=["barclays","BP",
                    "tesco","vodaphone"])
 
-cap = [33367, 68785, 20979, 2974]
+cap = np.array([33367, 68785, 20979, 2974])
 stocks = ["barclays","BP","Tesco","Vodaphone"]
+ftse=1814000
+cap = cap/ftse
+plt.figure()
+plt.pie(cap, labels=stocks, normalize=False)
+plt.show()
 
-
+print(cap)
